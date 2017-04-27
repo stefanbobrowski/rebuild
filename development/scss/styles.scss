@@ -46,7 +46,10 @@ $font-1: "Tahoma", sans-serif;
 /* General Styles */
 body {
     font-family: $font-1;
-	overflow: hidden;
+}
+
+section {
+	text-align: center;
 }
 
 p {
@@ -66,10 +69,10 @@ a {
 body {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	min-height: 100vh;
 }
 
-.hero {
+.header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -79,6 +82,38 @@ body {
 	h1 {
 		font-size: 30px;
 		color: #fff;
+	}
+}
+
+.hero {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	max-width: 1140px;
+	margin: 0 auto;
+	text-align: center;
+
+	div {
+
+		&:first-of-type {
+			img {
+				width: 50%;
+			}
+		}
+
+		&:nth-of-type(2) {
+			img {
+				width: 20%;
+			}
+		}
+
+		&:last-of-type {
+			img {
+				width: 30%;
+			}
+		}
+
+
 	}
 }
 
@@ -97,43 +132,45 @@ main {
 	}
 }
 
+.network {
+	.network-logo {
+		display: block;
+		height: 32px;
+		width: 32px;
+		transition: all 0.5s ease;
+	}
 
+	.github {
+		background: url('/production/images/github-logo.png');
 
-.network-logo {
-	display: block;
-	height: 32px;
-	width: 32px;
-	transition: all 0.5s ease;
-}
+		&:hover {
+			background: url('/production/images/github-logo-hover.png')
+		}
+	}
 
-.github {
-	background: url('/production/images/github-logo.png');
+	.stack {
+		background-image: url('/production/images/stack-logo.png');
 
-	&:hover {
-		background: url('/production/images/github-logo-hover.png')
+	}
+
+	.codepen {
+		background-image: url('/production/images/codepen-logo.png');
+
+		&:hover {
+			background-image: url('/production/images/codepen-logo-hover.png')
+		}
+	}
+
+	.linkedin {
+		background-image: url('/production/images/linkedin-logo.png');
+
+		&:hover {
+			background-image: url('/production/images/linkedin-logo-hover.png')
+		}
 	}
 }
 
-.stack {
-	background-image: url('/production/images/stack-logo.png');
 
-}
-
-.codepen {
-	background-image: url('/production/images/codepen-logo.png');
-
-	&:hover {
-		background-image: url('/production/images/codepen-logo-hover.png')
-	}
-}
-
-.linkedin {
-	background-image: url('/production/images/linkedin-logo.png');
-
-	&:hover {
-		background-image: url('/production/images/linkedin-logo-hover.png')
-	}
-}
 
 footer {
 	height: 40px;
