@@ -90,30 +90,45 @@ body {
 	justify-content: center;
 	width: 100%;
 	max-width: 1140px;
+	height: 280px;
 	margin: 0 auto;
 	text-align: center;
+	overflow: hidden;
+	background-color: #000;
 
-	div {
+	.hero-image {
+		position: relative;
 
+		img {
+			width: 100%;
+		}
 		&:first-of-type {
 			img {
-				width: 50%;
+
 			}
 		}
 
 		&:nth-of-type(2) {
 			img {
-				width: 20%;
 			}
 		}
 
 		&:last-of-type {
+			text-align: right;
 			img {
-				width: 30%;
+
 			}
 		}
+	}
 
-
+	.shadow {
+		// position: absolute;
+		// width: 100%;
+		// height: 100%;
+		// box-shadow: inset 22px -5px 20px 0px #000000;
+		// border-radius: 20px;
+		// top: 0;
+		// left: 0;
 	}
 }
 
