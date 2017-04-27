@@ -1,1 +1,1 @@
-$(document).ready(function(){"use strict";console.log("yo wautup")});
+$(document).ready(function(){"use strict";console.log("yo wautup");var o=$("html, body");$(".hero-button").click(function(){console.log("yo");o.animate({scrollTop:$("main").offset().top},1e3);return false})});
