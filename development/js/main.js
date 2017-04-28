@@ -3,6 +3,7 @@ $(document).ready(function(){
 
     console.log('yo wautup');
 
+    // Hero button scroll
     var $root = $('html, body');
     $('.hero-button').click(function() {
         console.log('yo');
@@ -11,6 +12,31 @@ $(document).ready(function(){
         }, 1000);
         return false;
     });
+
+    // Picture frame shadow change on scroll
+
+    var halfHeight;
+    var scrollTop;
+    var photosOffset;
+    var dist;
+    var goldenRatio;
+
+
+    $(window).scroll(function() {
+        halfHeight = $(window).height() / 2;
+        scrollTop = $(window).scrollTop();
+        photosOffset = $('.photos').offset().top + 300;
+        dist = (photosOffset - scrollTop);
+
+
+        if(dist < photosOffset && dist > 0) {
+            goldenRatio = (dist / 10);
+            console.log('AYAYAYAA');
+            $('.photo-frame').css('box-shadow', '0px ' + (goldenRatio - 35) + 'px 27px 5px rgba(0, 0, 0, 0.9)');
+        };
+
+    });
+
 
 
 });
