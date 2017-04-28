@@ -32,7 +32,7 @@ $(document).ready(function(){
         if(dist < photosOffset && dist > 0) {
             goldenRatio = (dist / 10);
             console.log('AYAYAYAA');
-            $('.photo-frame').css('box-shadow', '0px ' + (goldenRatio - 35) + 'px 27px 5px rgba(0, 0, 0, 0.9)');
+            $('.photo-frame').css('box-shadow', '0px ' + (goldenRatio - 35) + 'px 25px 3px #888');
         };
 
     });
