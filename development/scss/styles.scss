@@ -41,7 +41,7 @@ table {
 
 /* Variables */
 $color-1: red;
-$font-1: "Tahoma", sans-serif;
+$font-1: 'Open Sans', sans-serif;
 
 /* General Styles */
 body {
@@ -53,6 +53,7 @@ section {
 }
 
 p {
+	font-weight: 400;
     margin-bottom: 10px;
 }
 
@@ -107,7 +108,7 @@ nav {
 	background-color: #fff;
 
 	.hero-titles {
-		padding: 14px 0;
+		padding: 17px 0;
 		border-top: 3px solid $color-1;
 		border-bottom: 3px solid $color-1;
 		font-weight: 300;
@@ -120,6 +121,7 @@ nav {
 
 		h1 {
 			font-size: 30px;
+			font-weight: 600;
 			text-transform: uppercase;
 			letter-spacing: 5px;
 		}
@@ -199,12 +201,14 @@ main {
 }
 
 .bio {
-	max-width: 480px;
+	max-width: 500px;
 	margin: 0 auto 60px auto;
 	text-align: center;
 
 	p {
 		font-size: 18px;
+		font-weight: 300;
+		line-height: 22px;
 		text-align: center;
 	}
 }
@@ -217,6 +221,7 @@ main {
 
 .skills, .work, .network, .interests, .cat-gallery {
 	width: 300px;
+	padding: 10px;
 	border: 20px solid whitesmoke;
 }
 
@@ -229,9 +234,9 @@ main {
 .network {
 	.network-logo {
 		display: block;
-		max-width: 200px;
+		max-width: 220px;
 		width: 100%;
-		margin: 0 auto;
+		margin: 0 auto 10px auto;
 		transition: all 0.5s ease;
 
 		img {
@@ -241,19 +246,17 @@ main {
 	}
 
 	.github {
-
+		max-width: 140px;
 	}
 
 	.stack {
-
 	}
 
 	.codepen {
-
 	}
 
 	.linkedin {
-
+		max-width: 200px;
 	}
 }
 
