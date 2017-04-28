@@ -201,36 +201,32 @@ main {
 .bio {
 	max-width: 480px;
 	margin: 0 auto 60px auto;
+	text-align: center;
 
 	p {
-		width: 24em;
 		font-size: 18px;
-
-
-		&:first-of-type {
-			white-space: nowrap;
-			overflow: hidden;
-			animation: type 4s steps(60, end);
-
-		}
+		text-align: center;
 	}
 }
 
-@keyframes type{
-  from { width: 0; }
-}
-
-.skills-network-container {
+.about-professional, .about-personal {
 	display: flex;
 	justify-content: space-around;
+	margin-bottom: 60px;
+}
+
+.skills, .work, .network, .interests, .cat-gallery {
+	width: 300px;
+	border: 20px solid whitesmoke;
 }
 
 .skills {
-	width: 30vw;
+}
+
+.work {
 }
 
 .network {
-	width: 30vw;
 	.network-logo {
 		display: block;
 		max-width: 200px;
@@ -261,8 +257,21 @@ main {
 	}
 }
 
+
+
+.parallax {
+	height: 100vh;
+	width: 100%;
+	background-color: green;
+	background-image: url('/production/images/train.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+ 	background-attachment: fixed;
+}
+
 footer {
-	height: 40px;
+	height: 80px;
 	text-align: center;
 	font-size: 12px;
 	color: #fff;
@@ -270,7 +279,7 @@ footer {
 
 	p {
 		margin: 0;
-		line-height: 40px;
+		line-height: 80px;
 	}
 }
 
@@ -280,6 +289,12 @@ footer {
 	.photos .photo-frame {
 		width: 240px;
 		height: 240px;
+	}
+	.skills, .work, .network, .interests, .cat-gallery {
+		width: 240px;
+	}
+	.music iframe {
+		width: 240px !important;
 	}
 }
 
