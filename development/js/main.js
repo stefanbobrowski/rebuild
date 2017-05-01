@@ -57,9 +57,5 @@ $(document).ready(function(){
             $('.photo-frame').css('box-shadow', '0px ' + (goldenRatio - 10) + 'px 25px 2px #BBB');
         };
 
-        if(distProf < profOffset && distProf > 0 && $('.professional').css('flex-direction') !== 'column') {
-            goldenRatio2 = (distProf / 10);
-            $('.professional > section').css('box-shadow', '0px ' + (goldenRatio2 - 10) + 'px 25px 2px #BBB');
-        };
     });
 });

@@ -40,12 +40,26 @@ table {
 /* End reset */
 
 /* Variables */
-$color-1: red;
+
+$color-1: #222; //dark
+$color-2: #dddfd4;//light
+
+$color-3: #173e43; //dark green
+$color-4: #3fb0ac; //light green
+
+$color-5: #fae596; // yellow
+
+
+
+
+
+
 $font-1: 'Open Sans', sans-serif;
 
 /* General Styles */
 body {
     font-family: $font-1;
+	padding: 20px;
 }
 
 section {
@@ -63,10 +77,14 @@ h1, h2, h3 {
 a {
     text-decoration: none;
     transition: color 0.5s ease;
-
+	color: $color-1;
 	&:hover {
 		cursor: pointer;
-		color: $color-1;
+		color: $color-4 !important;
+	}
+
+	&:visited {
+		color: $color-3;
 	}
 }
 
@@ -95,7 +113,6 @@ nav {
 	a {
 		font-size: 16px;
 		font-weight: bold;
-		color: #000;
 	}
 }
 
@@ -110,9 +127,10 @@ nav {
 
 	.hero-titles {
 		padding: 30px 0;
-		border-top: 3px solid $color-1;
-		border-bottom: 3px solid $color-1;
+		border-top: 3px solid $color-4;
+		border-bottom: 3px solid $color-4;
 		font-weight: 300;
+		color: $color-1;
 
 		h2 {
 			font-family: $font-1;
@@ -135,10 +153,11 @@ nav {
 		bottom: calc(25% - 25px); left: 0; right: 0;
 		font-size: 50px;
 		transition: color 1s ease;
+		color: $color-1;
 
 		&:hover {
 			cursor: pointer;
-			color: $color-1;
+			color: $color-4;
 		}
 	}
 
@@ -151,7 +170,7 @@ nav {
 		width: 30%;
 		height: 2px;
 		margin: 0 auto;
-		background-color: whitesmoke;
+		background-color: $color-2;
 	}
 }
 
@@ -182,12 +201,9 @@ main {
 	& > section {
 		width: 30%;
 		padding: 20px;
-		border: 20px solid whitesmoke;
-		box-shadow: 0px 17px 27px 2px rgba(#BBB, 0.7);
+		border: 2px solid $color-2;
 	}
 }
-
-
 
 .photos {
 	display: flex;
@@ -196,25 +212,20 @@ main {
 
 	.photo-frame {
 		width: 30%;
-		border: 20px solid whitesmoke;
+		border: 20px solid $color-2;
 		box-shadow: 0px 17px 27px 2px rgba(#BBB, 0.7);
 		overflow: hidden;
-		transition: border-color 2s ease;
-
-		&:hover {
-			border-color: Turquoise;
-		}
 
 		&:first-of-type .photo {
-			background-image: url('/production/images/stefan-3.jpg');
+			background-image: url('../images/stefan-3.jpg');
 		}
 
 		&:nth-of-type(2) .photo {
-			background-image: url('/production/images/stefan-4.jpg');
+			background-image: url('../images/stefan-4.jpg');
 		}
 
 		&:last-of-type .photo {
-			background-image: url('/production/images/stefan-5.jpg');
+			background-image: url('../images/stefan-5.jpg');
 		}
 
 		.photo {
@@ -252,39 +263,16 @@ main {
 	ul {
 		li {
 			margin: 10px 0 10px 0;
-			padding: 10px;
-			border: 1px solid #000;
+			padding: 16px;
+			font-weight: 700;
+			border: 1px solid $color-4;
 			border-radius: 2px;
-			color: #fff;
+			color: $color-4;
+			transition: all 0.5s ease;
 
-			&:first-of-type {
-				background-color: #F06529;
-			}
-
-			&:nth-of-type(2) {
-				background-color: #c69;
-			}
-			&:nth-of-type(3) {
-				color: #000;
-				background-color: #f7df1e;
-			}
-			&:nth-of-type(4) {
-				background-color: #0769AD;
-				// background-color: #7ACEF4;
-			}
-			&:nth-of-type(5) {
-				background-color:#F34F29;
-			}
-			&:nth-of-type(6) {
-				background-color:#cb3837;
-			}
-
-			&:nth-of-type(7) {
-				background-color: #339933;
-			}
-
-			&:last-of-type {
-				background-color: #DD0031;
+			&:hover {
+				background-color: $color-4;
+				color: #fff;
 			}
 		}
 	}
@@ -307,39 +295,40 @@ main {
 			margin-bottom: 3px;
 			padding-left: 10px;
 
-			a {
-				color: #000;
-
-				&:visited {
-					color: red;
-				}
-
-				&:hover {
-					color: cyan;
-				}
-			}
 		}
 	}
 }
 
 .network {
-	.network-logo {
-		display: block;
-		max-width: 220px;
-		width: 100%;
-		margin: 0 auto 10px auto;
 
-		img {
-			display: block;
-			width: 100%;
+	ul {
+		li {
+			border: 1px solid $color-2;
 			transition: all 0.5s ease;
 
 			&:hover {
 				transform: scale(1.05);
 				backface-visibility: hidden;
 			}
+
+			.network-logo {
+				display: block;
+				max-width: 220px;
+				width: 100%;
+				margin: 0 auto 10px auto;
+
+				img {
+					display: block;
+					width: 100%;
+
+					&:hover {
+
+					}
+				}
+			}
 		}
 	}
+
 
 	.stack {
 		img {
@@ -387,7 +376,7 @@ main {
 	.parallax-image {
 		width: 100%;
 		height: 120vh;
-		background-image: url('/production/images/stefan.jpg');
+		background-image: url('../images/stefan.jpg');
 		background-position: center;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
@@ -417,7 +406,6 @@ footer {
 
 	.professional > section {
 		width: 100%;
-		box-shadow: none !important;
 
 		&:not(:last-of-type) {
 			border-bottom: none;
@@ -436,7 +424,7 @@ footer {
 
 @media screen and (max-width: 700px) {
 	.photos .photo-frame {
-		border: 10px solid whitesmoke;
+		border: 10px solid $color-2;
 	}
 }
 //
