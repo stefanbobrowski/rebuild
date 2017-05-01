@@ -1,42 +1,65 @@
 $(document).ready(function(){
     'use strict';
 
-    console.log('yo wautup');
-
-    // Hero button scroll
+    // Link page scrolls
     var $root = $('html, body');
     $('.hero-button').click(function() {
-        console.log('yo');
         $root.animate({
             scrollTop: $('main').offset().top
         }, 1000);
         return false;
     });
 
-    // Picture frame shadow change on scroll
+    $('.work-link').click(function() {
+        $root.animate({
+            scrollTop: $('.professional').offset().top
+        }, 1000);
+        return false;
+    });
 
+    $('.contact-link').click(function() {
+        $root.animate({
+            scrollTop: $('.contact').offset().top
+        }, 1000);
+        return false;
+    });
+
+
+    /* Window resize */
+
+    var photoWidth = $('.photo').width();
+    $('.photo').css('height', photoWidth );
+    $(window).resize(function() {
+        photoWidth = $('.photo').width();
+        $('.photo').css('height', photoWidth );
+    });
+
+    /* Window scroll */
     var halfHeight;
     var scrollTop;
     var photosOffset;
-    var dist;
+    var profOffset
+    var distPhotos;
+    var distProf;
     var goldenRatio;
-
+    var goldenRatio2;
 
     $(window).scroll(function() {
         halfHeight = $(window).height() / 2;
         scrollTop = $(window).scrollTop();
-        photosOffset = $('.photos').offset().top + 300;
-        dist = (photosOffset - scrollTop);
+        photosOffset = $('.photos').offset().top;
+        distPhotos = (photosOffset - scrollTop);
+        profOffset = $('.professional').offset().top;
+        distProf = (profOffset - scrollTop);
 
-
-        if(dist < photosOffset && dist > 0) {
-            goldenRatio = (dist / 10);
-            console.log('AYAYAYAA');
-            $('.photo-frame').css('box-shadow', '0px ' + (goldenRatio - 35) + 'px 25px 3px #888');
+        if(distPhotos < photosOffset && distPhotos > 0) {
+            goldenRatio = (distPhotos / 10);
+            $('.photo-frame').css('box-shadow', '0px ' + (goldenRatio - 10) + 'px 25px 2px #BBB');
         };
 
+        if(distProf < profOffset && distProf > 0 && $('.professional').css('flex-direction') !== 'column') {
+            goldenRatio2 = (distProf / 10);
+            $('.professional > section').css('box-shadow', '0px ' + (goldenRatio2 - 10) + 'px 25px 2px #BBB');
+        };
     });
-
-
-
 });

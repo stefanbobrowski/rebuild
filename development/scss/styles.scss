@@ -62,9 +62,10 @@ h1, h2, h3 {
 
 a {
     text-decoration: none;
-    transition: color 2.8s ease;
+    transition: color 0.5s ease;
 
 	&:hover {
+		cursor: pointer;
 		color: $color-1;
 	}
 }
@@ -89,7 +90,7 @@ nav {
 	justify-content: space-between;
 	align-items: flex-end;
 	height: 40px;
-	padding: 0 30px;
+	padding: 0 24px;
 	background-color: #fff;
 	a {
 		font-size: 16px;
@@ -108,14 +109,14 @@ nav {
 	background-color: #fff;
 
 	.hero-titles {
-		padding: 17px 0;
+		padding: 30px 0;
 		border-top: 3px solid $color-1;
 		border-bottom: 3px solid $color-1;
 		font-weight: 300;
 
 		h2 {
 			font-family: $font-1;
-			margin-bottom: 30px;
+			margin-bottom: 20px;
 			font-size: 20px;
 		}
 
@@ -131,9 +132,9 @@ nav {
 		width: 50px;
 		margin: 0 auto;
 		position: absolute;
-		bottom: 20px; left: 0; right: 0;
+		bottom: calc(25% - 25px); left: 0; right: 0;
 		font-size: 50px;
-		transition: color 2.8s ease;
+		transition: color 1s ease;
 
 		&:hover {
 			cursor: pointer;
@@ -147,7 +148,7 @@ nav {
 		bottom: 0;
 		left: 0;
 		right: 0;
-		width: 200px;
+		width: 30%;
 		height: 2px;
 		margin: 0 auto;
 		background-color: whitesmoke;
@@ -159,17 +160,34 @@ main {
 	width: 100%;
     max-width: 1140px;
     margin: 0 auto;
-	padding: 20px 0;
+	padding: 40px 0;
 	background-color: #fff;
+	box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, .7);
 
 	section {
 		background-color: #fff;
 		.section-title {
-			margin-bottom: 17px;
+			margin-bottom: 40px;
+			font-weight: 600;
 			font-size: 26px;
 		}
 	}
 }
+
+.professional {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 60px;
+
+	& > section {
+		width: 30%;
+		padding: 20px;
+		border: 20px solid whitesmoke;
+		box-shadow: 0px 17px 27px 2px rgba(#BBB, 0.7);
+	}
+}
+
+
 
 .photos {
 	display: flex;
@@ -177,25 +195,40 @@ main {
 	margin-bottom: 60px;
 
 	.photo-frame {
-		width: 300px;
-		height: 300px;
-		margin-top: 20px;
+		width: 30%;
 		border: 20px solid whitesmoke;
-		box-shadow: 0px 17px 27px 2px rgba(0,0,0,0.9);
-		background-color: #000;
-		background-size: cover;
-		background-position: center;
+		box-shadow: 0px 17px 27px 2px rgba(#BBB, 0.7);
+		overflow: hidden;
+		transition: border-color 2s ease;
 
-		&:first-of-type {
+		&:hover {
+			border-color: Turquoise;
+		}
+
+		&:first-of-type .photo {
 			background-image: url('/production/images/stefan-3.jpg');
 		}
 
-		&:nth-of-type(2) {
+		&:nth-of-type(2) .photo {
 			background-image: url('/production/images/stefan-4.jpg');
 		}
 
-		&:last-of-type {
+		&:last-of-type .photo {
 			background-image: url('/production/images/stefan-5.jpg');
+		}
+
+		.photo {
+			width: 100%;
+			background-color: #000;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: all 1s ease;
+
+			&:hover {
+				transform: scale(1.05);
+				backface-visibility: hidden;
+			}
 		}
 	}
 }
@@ -207,28 +240,86 @@ main {
 
 	p {
 		font-size: 18px;
-		font-weight: 300;
+		font-weight: 400;
 		line-height: 22px;
 		text-align: center;
 	}
 }
 
-.about-professional, .about-personal {
-	display: flex;
-	justify-content: space-around;
-	margin-bottom: 60px;
-}
 
-.skills, .work, .network, .interests, .cat-gallery {
-	width: 300px;
-	padding: 10px;
-	border: 20px solid whitesmoke;
-}
 
 .skills {
+	ul {
+		li {
+			margin: 10px 0 10px 0;
+			padding: 10px;
+			border: 1px solid #000;
+			border-radius: 2px;
+			color: #fff;
+
+			&:first-of-type {
+				background-color: #F06529;
+			}
+
+			&:nth-of-type(2) {
+				background-color: #c69;
+			}
+			&:nth-of-type(3) {
+				color: #000;
+				background-color: #f7df1e;
+			}
+			&:nth-of-type(4) {
+				background-color: #0769AD;
+				// background-color: #7ACEF4;
+			}
+			&:nth-of-type(5) {
+				background-color:#F34F29;
+			}
+			&:nth-of-type(6) {
+				background-color:#cb3837;
+			}
+
+			&:nth-of-type(7) {
+				background-color: #339933;
+			}
+
+			&:last-of-type {
+				background-color: #DD0031;
+			}
+		}
+	}
 }
 
 .work {
+
+	h2 {
+		margin-bottom: 5px;
+		font-size: 20px;
+		font-weight: 500;
+		text-align: left;
+	}
+
+	ul {
+		margin-bottom: 20px;
+		text-align: left;
+
+		li {
+			margin-bottom: 3px;
+			padding-left: 10px;
+
+			a {
+				color: #000;
+
+				&:visited {
+					color: red;
+				}
+
+				&:hover {
+					color: cyan;
+				}
+			}
+		}
+	}
 }
 
 .network {
@@ -237,19 +328,29 @@ main {
 		max-width: 220px;
 		width: 100%;
 		margin: 0 auto 10px auto;
-		transition: all 0.5s ease;
 
 		img {
 			display: block;
 			width: 100%;
+			transition: all 0.5s ease;
+
+			&:hover {
+				transform: scale(1.05);
+				backface-visibility: hidden;
+			}
+		}
+	}
+
+	.stack {
+		img {
+			width: 100%;
+			max-width: 208px;
+			margin: 0 auto;
 		}
 	}
 
 	.github {
-		max-width: 140px;
-	}
-
-	.stack {
+		max-width: 130px;
 	}
 
 	.codepen {
@@ -260,17 +361,37 @@ main {
 	}
 }
 
+.contact {
+	form {
+		display: flex;
+		justify-content: center;
+		fieldset {
+			display: flex;
+			flex-direction: column;
 
+			input {
+
+			}
+
+			textarea {
+
+			}
+		}
+	}
+}
 
 .parallax {
-	height: 100vh;
+	height: 120vh;
 	width: 100%;
-	background-color: green;
-	background-image: url('/production/images/train.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
- 	background-attachment: fixed;
+
+	.parallax-image {
+		width: 100%;
+		height: 120vh;
+		background-image: url('/production/images/stefan.jpg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
 }
 
 footer {
@@ -288,27 +409,58 @@ footer {
 
 /* Media Queries */
 
-@media screen and (max-width: 1024px) {
-	.photos .photo-frame {
-		width: 240px;
-		height: 240px;
+@media screen and (max-width: 900px) {
+
+	.professional {
+		flex-direction: column;
 	}
-	.skills, .work, .network, .interests, .cat-gallery {
-		width: 240px;
+
+	.professional > section {
+		width: 100%;
+		box-shadow: none !important;
+
+		&:not(:last-of-type) {
+			border-bottom: none;
+		}
 	}
-	.music iframe {
-		width: 240px !important;
+
+	.work {
+		h2 {
+			text-align: center;
+		}
+		ul {
+			text-align: center;
+		}
 	}
 }
 
-@media screen and (max-width: 768px) {
-	.photos {
-		flex-wrap: wrap;
-	}
-
+@media screen and (max-width: 700px) {
 	.photos .photo-frame {
-		width: 180px;
-		height: 180px;
 		border: 10px solid whitesmoke;
 	}
 }
+//
+// @media screen and (max-width: 1024px) {
+// 	.photos .photo-frame {
+// 		width: 240px;
+// 		height: 240px;
+// 	}
+// 	.skills, .work, .network, .interests, .cat-gallery {
+// 		width: 240px;
+// 	}
+// 	.music iframe {
+// 		width: 240px !important;
+// 	}
+// }
+//
+// @media screen and (max-width: 768px) {
+// 	.photos {
+// 		flex-wrap: wrap;
+// 	}
+//
+// 	.photos .photo-frame {
+// 		width: 180px;
+// 		height: 180px;
+// 		border: 10px solid whitesmoke;
+// 	}
+// }

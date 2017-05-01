@@ -3,6 +3,11 @@
     <head>
         <title>Stefan Bobrowski</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="Stefan, stefan bobrowski, Bobrowski, web developer, NYC">
+        <meta name="description" content="Web Developer - HTML, CSS, javascript, jQuery, AJAX, Node.js, npm, Git, Gulp, SASS">
+        <meta name="author" content="Stefan Bobrowski">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="production/css/styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -12,8 +17,8 @@
     <body>
         <div class="wrapper">
             <nav>
-                <a href="#">work</a>
-                <a href="#">contact</a>
+                <a class="work-link">work</a>
+                <a class="contact-link">contact</a>
             </nav>
             <section class="hero-container">
                 <div class="hero-titles">
@@ -27,111 +32,110 @@
                 <section class="about">
                     <h1 class="section-title">About</h1>
                     <section class="photos">
-                        <div class="photo-frame"></div>
-                        <div class="photo-frame"></div>
-                        <div class="photo-frame"></div>
+                        <div class="photo-frame"><div class="photo"></div></div>
+                        <div class="photo-frame"><div class="photo"></div></div>
+                        <div class="photo-frame"><div class="photo"></div></div>
                     </section>
                     <section class="bio">
                         <p>Hey I'm Stefan Bobrowski a front-end Web Developer working out of NYC.<p>
-                        <p>Professionally I enjoy coding challenging designs into structurally sound and modern websites. I take pleasure in starting new projects, creating new builds from the ground up, and helping people out on in the community.</p>
+                        <p>Professionally I enjoy coding intricate designs into modern and robust websites. I take pleasure in starting new projects, creating new builds from the ground up, and helping people out on in the community.</p>
                     </section>
-
-                    <section class="about-professional">
-                        <section class="skills">
-                            <h1 class="section-title">Skills</h1>
-                            <ul>
-                                <li>HTML</li>
-                                <li>SCSS</li>
-                                <li>Javascript</li>
-                                <li>jQuery</li>
-                                <li>NPM</li>
-                                <li>Node.js</li>
-                                <li>Git</li>
-                                <li>Angular 4</li>
-                            </ul>
-                        </section>
-
-                        <section class="work">
-                            <h1 class="section-title">Work</h1>
-                            <ul>
-                                <li><a href="#" target="_blank">site-1</a>   </li>
-                                <li><a href="#" target="_blank">site-2</a>  </li>
-                                <li><a href="#" target="_blank">site-3</a></li>
-                            </ul>
-                        </section>
-
-                        <section class="network">
-                            <h1 class="section-title">Network</h1>
-                            <ul>
-                                <li>
-                                    <a class="network-logo stack" href="http://stackoverflow.com/users/3317728/stefanbob">
-                                        <img src="http://stackoverflow.com/users/flair/3317728.png?theme=dark" width="208" height="58" alt="profile for StefanBob at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for StefanBob at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
-                                    </a>
-                                </li>
-                                <!-- <li>
-                                    <a class="network-logo stack" href="http://stackoverflow.com/users/3317728/stefanbob?tab=profile" target="_blank">
-                                        <img src="production/images/so-logo.png" alt="">
-                                    </a>
-                                </li> -->
-                                <li>
-                                    <a class="network-logo github" href="https://github.com/stefanbobrowski" target="_blank">
-                                        <img src="production/images/github-logo.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="network-logo codepen" href="http://codepen.io/StefanBobrowski/" target="_blank">
-                                        <img src="production/images/codepen-logo.png" alt="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="network-logo linkedin" href="https://www.linkedin.com/in/stefanbobrowski/" target="_blank">
-                                        <img src="production/images/linkedin-logo.png" alt="">
-                                    </a>
-                                </li>
-                            </ul>
-                        </section>
-                    </section>
-
-
-                <section class="bio">
-                    <p>Outside of work I enjoy the outdoors, my cat, PC games, music shows, good eats, and exploring NYC. </p>
                 </section>
 
-                <section class="about-personal">
-                    <section class="interests">
-                        <h1 class="section-title">Interests</h1>
+                <section class="professional">
+                    <section class="skills">
+                        <h1 class="section-title">Skills</h1>
                         <ul>
-                            <li>Overwatch</li>
-                            <li>Reading</li>
-                            <li>Volleyball</li>
-                            <li>Listening to Music</li>
-                            <li>Hanging with Cat</li>
-                            <li>Exploring NYC</li>
-                            <li>Eat at cool places</li>
-                            <li>Going to music shows</li>
+                            <li>HTML</li>
+                            <li>SCSS</li>
+                            <li>Javascript</li>
+                            <li>jQuery</li>
+                            <li>Git</li>
+                            <li>NPM</li>
+                            <li>Node.js</li>
+                            <li>Angular 4</li>
                         </ul>
                     </section>
-                    <section class="cat-gallery">
-                        <h1 class="section-title">Cat Gallery</h1>
-                        <h1>With all things internet comes the cat</h1>
-                        <h1>(Insert cat gallery here)</h1>
-                    </section>
-                    <section class="music">
-                        <iframe src="https://embed.spotify.com/?uri=spotify%3Aalbum%3A4jldY4eFDSoZua0KBCp6KH" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+
+                    <section class="work">
+                        <h1 class="section-title">Work</h1>
+
+                        <h2>Projects</h2>
+                        <ul>
+                            <li><a href="http://stefanbobrowski.com/MagnusApp/" target="_blank">Project 1</a></li>
+                            <li><a href="http://stefanbobrowski.com/ItemShop/" target="_blank">Project 2</a></li>
+                        </ul>
+
+                        <h2>Finalsite</h2>
+                        <ul>
+                            <li><a href="https://www.asf.edu.mx/" target="_blank">Site 1</a></li>
+                            <li><a href="https://www.slshs.org/" target="_blank">Site 2</a>  </li>
+                            <li><a href="https://www.collingwood.org/" target="_blank">Site 3</a></li>
+                            <li><a href="http://www.canacad.ac.jp/" target="_blank">Site 4</a></li>
+                            <li><a href="https://www.stjames.edu/" target="_blank">Site 5</a></li>
+                            <li><a href="http://www.desmet.org/" target="_blank">Site 6</a></li>
+                            <li><a href="http://www.village-school.org/" target="_blank">Site 7</a></li>
+                            <li><a href="http://www.cleveland.edu/" target="_blank">Site 8</a></li>
+                            <li><a href="http://www.gosaints.org/" target="_blank">Site 9</a></li>
+                            <li><a href="https://www.summit.k12.nj.us/" target="_blank">Site 10</a></li>
+                            <li><a href="http://www.acs.edu.lb/" target="_blank">Site 11</a></li>
+                            <li><a href="https://www.stevenscoop.org/" target="_blank">Site 12</a></li>
+                            <li><a href="https://www.stisidore.org/" target="_blank">Site 13</a></li>
+                            <li><a href="http://www.stfrancis.k12.mn.us/" target="_blank">Site 14</a></li>
+                            <li><a href="https://www.pjaproud.org/" target="_blank">Site 15</a></li>
+                            <li><a href="http://www.cabe.org/" target="_blank">Site 16</a></li>
+                        </ul>
                     </section>
 
+                    <section class="network">
+                        <h1 class="section-title">Network</h1>
+                        <ul>
+                            <li>
+                                <a class="network-logo stack" href="http://stackoverflow.com/users/3317728/stefanbob">
+                                    <img src="http://stackoverflow.com/users/flair/3317728.png?theme=dark" width="208" height="58" alt="profile for StefanBob at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for StefanBob at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="network-logo github" href="https://github.com/stefanbobrowski" target="_blank">
+                                    <img src="production/images/github-logo.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="network-logo codepen" href="http://codepen.io/StefanBobrowski/" target="_blank">
+                                    <img src="production/images/codepen-logo.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="network-logo linkedin" href="https://www.linkedin.com/in/stefanbobrowski/" target="_blank">
+                                    <img src="production/images/linkedin-logo.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
                 </section>
-
-
-
 
                 <section class="contact">
-                    <h1 class="section-title">Contact</h1>
-                    <p>stefanbobrowski1@gmail.com</p>
+                        <h1 class="section-title">Contact</h1>
+                        <p>Contact me: <a class="site-link" href="mailto:stefanbobrowski1@gmail.com">stefanbobrowski1@gmail.com</a></p>
+
+                        <div class="message-status"></div>
+
+                        <form name="contact-form" action="send.php" method="post">
+                            <fieldset>
+                                <input type="text" name="name" placeholder="Name" required>
+                                <input type="email" name="email" placeholder="Email" pattern="^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$" required>
+                                <textarea name="message" rows="7" cols="30" placeholder="Message" required></textarea>
+                                <button type="submit" name="submit" value="Submit">Submit</button>
+                            </fieldset>
+                        </form>
                 </section>
+
             </main>
 
             <section class="parallax">
+
+                <div class="parallax-image">
+                </div>
 
             </section>
 
