@@ -12,15 +12,15 @@ $(document).ready(function(){
 
     $('.work-link').click(function() {
         $root.animate({
-            scrollTop: $('.professional').offset().top
-        }, 1000);
+            scrollTop: $('.professional').offset().top - 20
+        }, 1300);
         return false;
     });
 
     $('.contact-link').click(function() {
         $root.animate({
-            scrollTop: $('.contact').offset().top
-        }, 1000);
+            scrollTop: $('.contact').offset().top - 20
+        }, 1500);
         return false;
     });
 
@@ -52,7 +52,7 @@ $(document).ready(function(){
 
         if(distPhotos < photosOffset && distPhotos > -photosOffset) {
             goldenRatio = distPhotos / 25;
-            $('.photo-frame').css('box-shadow', '0px ' + (goldenRatio + 6) + 'px 4px 2px #AAA');
+            $('.photo-frame').css('box-shadow', '0px ' + (goldenRatio + 6) + 'px 4px 2px #c9c9c9');
         };
 
     });

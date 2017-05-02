@@ -41,10 +41,15 @@ table {
 
 /* Variables */
 $color-1: #222; //dark
-$color-2: #dddfd4;//light
-$color-3: #173e43; //dark green
-$color-4: #3fb0ac; //light green
-$color-5: #fae596; // yellow
+$color-2: #e3e3e3;//light gray
+$color-3: #c9c9c9; // dark gray
+$color-4: #9ad3de; //light blue
+$color-5: #89bdd3; // dark blue
+
+
+
+
+
 
 $font-1: 'Open Sans', sans-serif;
 
@@ -180,21 +185,19 @@ main {
 		background-color: #fff;
 		.section-title {
 			margin-bottom: 40px;
+			font-size: 28px;
 			font-weight: 600;
-			font-size: 26px;
 		}
-	}
-}
 
-.professional {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 60px;
-
-	& > section {
-		width: 31%;
-		padding: 20px;
-		border: 2px solid $color-2;
+		.prof-section-title {
+			display: inline-block;
+			position: relative;
+			padding: 0 10px 10px;
+			margin-bottom: 20px;
+			font-size: 26px;
+			font-weight: 600;
+			border-bottom: 2px solid $color-5;
+		}
 	}
 }
 
@@ -205,8 +208,8 @@ main {
 
 	.photo-frame {
 		width: 31%;
-		border: 20px solid $color-2;
-		box-shadow: 0px 0px 4px 2px #AAA;
+		border: 20px solid whitesmoke;
+		box-shadow: 0px 0px 4px 2px $color-3;
 		overflow: hidden;
 
 		&:first-of-type .photo {
@@ -227,11 +230,12 @@ main {
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
-			transition: all 1s ease;
+			transition: all 0.5s ease;
+			z-index: 1;
+			position: relative;
 
 			&:hover {
-				transform: scale(1.05);
-				backface-visibility: hidden;
+				transform: scale(1.1);
 			}
 		}
 	}
@@ -250,7 +254,17 @@ main {
 	}
 }
 
+.professional {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 60px;
 
+	& > section {
+		width: 31%;
+		padding: 20px;
+		border: 2px solid $color-5;
+	}
+}
 
 .skills {
 	ul {
@@ -259,14 +273,14 @@ main {
 			margin: 10px 0 10px 0;
 			padding: 16px;
 			font-weight: 700;
-			border: 1px solid $color-4;
-			border-radius: 2px;
-			color: $color-4;
+			border: 1px solid $color-5;
+			color: $color-5;
+			background-color: $color-2;
 			transition: all 0.5s ease;
 
-			&:nth-of-type(odd) {
-				background-color: $color-4;
-				color: #fff;
+			&:nth-of-type(even) {
+				color: $color-2;
+				background-color: $color-5;
 			}
 
 			&:hover {
@@ -304,7 +318,7 @@ main {
 			height: 80px;
 			margin-bottom: 10px;
 			padding: 5px;
-			border: 1px solid $color-3;
+			border: 1px solid $color-5;
 			transition: all 0.5s ease;
 			background-color: #fff;
 			background-repeat: no-repeat;
@@ -313,7 +327,6 @@ main {
 
 			&:hover {
 				transform: scale(1.05);
-				backface-visibility: hidden;
 			}
 
 			&.stack {
@@ -352,11 +365,13 @@ main {
 
 			input, textarea {
 				width: 100%;
+				max-width: 500px;
+				max-height: 400px;
 				margin-bottom: 10px;
 				padding: 15px;
-				border: 1px solid $color-4;
+				border: 1px solid $color-5;
 				font-size: 18px;
-				color: $color-4;
+				color: $color-5;
 
 				&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 				  color: $color-2;
@@ -380,14 +395,14 @@ main {
 				padding: 15px;
 				font-size: 18px;
 				font-weight: 600;
-				color: $color-4;
-				border: 1px solid $color-4;
+				color: $color-5;
+				border: 1px solid $color-5;
 				background-color: #fff;
 				transition: all 0.5s ease;
 
 				&:hover {
 					cursor: pointer;
-					background-color: $color-4;
+					background-color: $color-5;
 					color: #fff;
 				}
 			}
@@ -411,7 +426,7 @@ footer {
 	height: 80px;
 	text-align: center;
 	font-size: 12px;
-	color: #fff;
+	color: $color-5;
 	background-color: #000;
 
 	p {
@@ -422,7 +437,11 @@ footer {
 
 /* Media Queries */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
+
+	.photos .photo-frame {
+		border: 10px solid whitesmoke;
+	}
 
 	.professional {
 		flex-direction: column;
@@ -432,7 +451,7 @@ footer {
 		width: 100%;
 
 		&:not(:last-of-type) {
-			border-bottom: none;
+			margin-bottom: 20px;
 		}
 	}
 
@@ -462,9 +481,7 @@ footer {
 }
 
 @media screen and (max-width: 700px) {
-	.photos .photo-frame {
-		border: 10px solid $color-2;
-	}
+
 }
 //
 // @media screen and (max-width: 1024px) {
