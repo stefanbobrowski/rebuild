@@ -46,11 +46,6 @@ $color-3: #c9c9c9; // dark gray
 $color-4: #9ad3de; //light blue
 $color-5: #89bdd3; // dark blue
 
-
-
-
-
-
 $font-1: 'Open Sans', sans-serif;
 
 /* General Styles */
@@ -81,11 +76,11 @@ a {
 	color: $color-1;
 	&:hover {
 		cursor: pointer;
-		color: $color-4 !important;
+		color: $color-5 !important;
 	}
 
 	&:visited {
-		color: $color-5;
+		color: $color-2;
 	}
 }
 
@@ -125,8 +120,8 @@ nav {
 
 	.hero-titles {
 		padding: 30px 0;
-		border-top: 3px solid $color-4;
-		border-bottom: 3px solid $color-4;
+		border-top: 3px solid $color-5;
+		border-bottom: 3px solid $color-5;
 		font-weight: 300;
 		color: $color-1;
 
@@ -155,7 +150,7 @@ nav {
 
 		&:hover {
 			cursor: pointer;
-			color: $color-4;
+			color: $color-5;
 		}
 	}
 
