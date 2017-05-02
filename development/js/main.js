@@ -36,25 +36,23 @@ $(document).ready(function(){
 
     /* Window scroll */
     var halfHeight;
+    var eleHalfHeight;
     var scrollTop;
     var photosOffset;
     var profOffset
     var distPhotos;
-    var distProf;
     var goldenRatio;
-    var goldenRatio2;
 
     $(window).scroll(function() {
         halfHeight = $(window).height() / 2;
+        eleHalfHeight = $('.photo').height() / 2;
         scrollTop = $(window).scrollTop();
-        photosOffset = $('.photos').offset().top;
+        photosOffset = $('.photos').offset().top - halfHeight + eleHalfHeight ;
         distPhotos = (photosOffset - scrollTop);
-        profOffset = $('.professional').offset().top;
-        distProf = (profOffset - scrollTop);
 
-        if(distPhotos < photosOffset && distPhotos > 0) {
-            goldenRatio = (distPhotos / 10);
-            $('.photo-frame').css('box-shadow', '0px ' + (goldenRatio - 10) + 'px 25px 2px #BBB');
+        if(distPhotos < photosOffset && distPhotos > -photosOffset) {
+            goldenRatio = distPhotos / 25;
+            $('.photo-frame').css('box-shadow', '0px ' + (goldenRatio + 6) + 'px 4px 2px #AAA');
         };
 
     });

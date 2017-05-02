@@ -40,26 +40,22 @@ table {
 /* End reset */
 
 /* Variables */
-
 $color-1: #222; //dark
 $color-2: #dddfd4;//light
-
 $color-3: #173e43; //dark green
 $color-4: #3fb0ac; //light green
-
 $color-5: #fae596; // yellow
-
-
-
-
-
 
 $font-1: 'Open Sans', sans-serif;
 
 /* General Styles */
 body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	padding: 20px 20px 0 20px;
     font-family: $font-1;
-	padding: 20px;
+	background-color: #000;
 }
 
 section {
@@ -84,17 +80,14 @@ a {
 	}
 
 	&:visited {
-		color: $color-3;
+		color: $color-5;
 	}
 }
 
 /* Section Styles */
 
 body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	background-color: #000;
+
 }
 
 .wrapper {
@@ -179,11 +172,11 @@ main {
 	width: 100%;
     max-width: 1140px;
     margin: 0 auto;
-	padding: 40px 0;
+	padding: 40px 20px;
 	background-color: #fff;
 	box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, .7);
 
-	section {
+	> section {
 		background-color: #fff;
 		.section-title {
 			margin-bottom: 40px;
@@ -195,11 +188,11 @@ main {
 
 .professional {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	margin-bottom: 60px;
 
 	& > section {
-		width: 30%;
+		width: 31%;
 		padding: 20px;
 		border: 2px solid $color-2;
 	}
@@ -207,13 +200,13 @@ main {
 
 .photos {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	margin-bottom: 60px;
 
 	.photo-frame {
-		width: 30%;
+		width: 31%;
 		border: 20px solid $color-2;
-		box-shadow: 0px 17px 27px 2px rgba(#BBB, 0.7);
+		box-shadow: 0px 0px 4px 2px #AAA;
 		overflow: hidden;
 
 		&:first-of-type .photo {
@@ -262,6 +255,7 @@ main {
 .skills {
 	ul {
 		li {
+			max-width: 300px;
 			margin: 10px 0 10px 0;
 			padding: 16px;
 			font-weight: 700;
@@ -283,7 +277,6 @@ main {
 }
 
 .work {
-
 	h2 {
 		margin-bottom: 5px;
 		font-size: 20px;
@@ -298,7 +291,6 @@ main {
 		li {
 			margin-bottom: 3px;
 			padding-left: 10px;
-
 		}
 	}
 }
@@ -344,6 +336,11 @@ main {
 }
 
 .contact {
+	padding: 0 20px 20px 20px;
+
+	> p {
+		margin-bottom: 20px;
+	}
 	form {
 		display: flex;
 		justify-content: center;
@@ -352,27 +349,57 @@ main {
 			flex-direction: column;
 			width: 100%;
 			max-width: 500px;
-			border: 1px solid red;
 
-			input {
+			input, textarea {
 				width: 100%;
-				padding: 20px;
+				margin-bottom: 10px;
+				padding: 15px;
+				border: 1px solid $color-4;
+				font-size: 18px;
+				color: $color-4;
+
+				&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+				  color: $color-2;
+				}
+				&::-moz-placeholder { /* Firefox 19+ */
+				  color: $color-2;
+				}
+				&:-ms-input-placeholder { /* IE 10+ */
+				  color: $color-2;
+				}
+				&:-moz-placeholder { /* Firefox 18- */
+				  color: $color-2;
+				}
 			}
 
-			textarea {
+
+			button {
 				width: 100%;
+				max-width: 320px;
+				margin: 0 auto;
+				padding: 15px;
+				font-size: 18px;
+				font-weight: 600;
+				color: $color-4;
+				border: 1px solid $color-4;
+				background-color: #fff;
+				transition: all 0.5s ease;
+
+				&:hover {
+					cursor: pointer;
+					background-color: $color-4;
+					color: #fff;
+				}
 			}
 		}
 	}
 }
 
 .parallax {
-	height: 120vh;
-	width: 100%;
 
 	.parallax-image {
 		width: 100%;
-		height: 120vh;
+		height: 100vh;
 		background-image: url('../images/stefan.jpg');
 		background-position: center;
 		background-repeat: no-repeat;
@@ -409,12 +436,27 @@ footer {
 		}
 	}
 
+	.skills {
+		ul {
+			li {
+				margin: 0 auto 10px auto;
+			}
+		}
+	}
+
 	.work {
 		h2 {
 			text-align: center;
 		}
 		ul {
 			text-align: center;
+		}
+	}
+
+	.network {
+		.network-logos a {
+			max-width: 300px;
+			margin: 0 auto 10px auto;
 		}
 	}
 }
