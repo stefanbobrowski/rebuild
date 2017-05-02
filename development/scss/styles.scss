@@ -270,9 +270,13 @@ main {
 			color: $color-4;
 			transition: all 0.5s ease;
 
-			&:hover {
+			&:nth-of-type(odd) {
 				background-color: $color-4;
 				color: #fff;
+			}
+
+			&:hover {
+
 			}
 		}
 	}
@@ -300,53 +304,42 @@ main {
 }
 
 .network {
-
-	ul {
-		li {
-			border: 1px solid $color-2;
+	.network-logos {
+		width: 100%;
+		> a {
+			display: block;
+			width: 100%;
+			height: 80px;
+			margin-bottom: 10px;
+			padding: 5px;
+			border: 1px solid $color-3;
 			transition: all 0.5s ease;
+			background-color: #fff;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
 
 			&:hover {
 				transform: scale(1.05);
 				backface-visibility: hidden;
 			}
 
-			.network-logo {
-				display: block;
-				max-width: 220px;
-				width: 100%;
-				margin: 0 auto 10px auto;
+			&.stack {
+				background-image: url('../images/so-logo.png');
+			}
 
-				img {
-					display: block;
-					width: 100%;
+			&.github {
+				background-image: url('../images/github-logo.png');
+			}
 
-					&:hover {
+			&.codepen {
+				background-image: url('../images/codepen-logo.png');
+			}
 
-					}
-				}
+			&.linkedin {
+				background-image: url('../images/linkedin-logo.png');
 			}
 		}
-	}
-
-
-	.stack {
-		img {
-			width: 100%;
-			max-width: 208px;
-			margin: 0 auto;
-		}
-	}
-
-	.github {
-		max-width: 130px;
-	}
-
-	.codepen {
-	}
-
-	.linkedin {
-		max-width: 200px;
 	}
 }
 
@@ -357,13 +350,17 @@ main {
 		fieldset {
 			display: flex;
 			flex-direction: column;
+			width: 100%;
+			max-width: 500px;
+			border: 1px solid red;
 
 			input {
-
+				width: 100%;
+				padding: 20px;
 			}
 
 			textarea {
-
+				width: 100%;
 			}
 		}
 	}
