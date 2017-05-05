@@ -154,18 +154,6 @@ nav {
 			color: $color-5;
 		}
 	}
-
-	&:after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		width: 30%;
-		height: 2px;
-		margin: 0 auto;
-		background-color: $color-2;
-	}
 }
 
 main {
@@ -269,15 +257,14 @@ main {
 			margin: 10px 0 10px 0;
 			padding: 16px;
 			font-weight: 700;
-			border: 1px solid $color-5;
 			color: $color-5;
 			background-color: $color-2;
 			transition: all 0.5s ease;
 
-			&:nth-of-type(even) {
-				color: $color-2;
-				background-color: $color-5;
-			}
+			// &:nth-of-type(even) {
+			// 	color: $color-2;
+			// 	background-color: $color-5;
+			// }
 
 			&:hover {
 
@@ -289,7 +276,9 @@ main {
 .work {
 	.work-folder {
 		display: flex;
+
 		i {
+			transition: all 0.3s ease;
 		}
 
 		h2 {
@@ -297,15 +286,30 @@ main {
 			font-size: 24px;
 			font-weight: 500;
 			text-align: left;
+			transition: all 0.3s ease;
+		}
+
+		&:hover {
+			cursor: pointer;
+
+			i, h2 {
+				color: $color-5;
+			}
 		}
 	}
 
 	ul {
+		height: 0;
 		margin-bottom: 20px;
 		margin-left: 11px;
-		padding-top: 10px;
 		position: relative;
 		text-align: left;
+		overflow: hidden;
+		transition: all 0.5s ease;
+
+		&.expand {
+			height: auto;
+		}
 
 		&:before {
 			content: '';
@@ -319,28 +323,30 @@ main {
 		}
 
 		li {
-			position: relative;
-			margin-bottom: 3px;
+			margin-bottom: 6px;
 			padding-left: 34px;
+			position: relative;
 
-			&:before {
-				content: '';
-				display: block;
-				width: 25px;
-				height: 2px;
-				position: absolute;
-				left: 0px;
-				bottom: 2px;
-				background-color: $color-3;
+			&:first-of-type {
+				padding-top: 10px;
 			}
 
 			a {
 				position: relative;
 				top: 4px;
+				line-height: 20px;
 				font-weight: 400;
 				transition: all 0.5s ease;
 
-				&:hover {
+				&:before {
+					content: '';
+					display: block;
+					width: 25px;
+					height: 2px;
+					position: absolute;
+					left: -32px;
+					top: 11px;
+					background-color: $color-3;
 				}
 			}
 		}
@@ -425,7 +431,6 @@ main {
 				}
 			}
 
-
 			button {
 				width: 100%;
 				max-width: 320px;
@@ -449,7 +454,6 @@ main {
 }
 
 .parallax {
-
 	.parallax-image {
 		width: 100%;
 		height: 100vh;
@@ -505,8 +509,10 @@ footer {
 		h2 {
 			text-align: center;
 		}
+		.work-folder {
+			justify-content: center;
+		}
 		ul {
-			text-align: center;
 		}
 	}
 

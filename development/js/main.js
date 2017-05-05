@@ -24,36 +24,58 @@ $(document).ready(function(){
         return false;
     });
 
+    /* Window scroll */
+    var wH = $(window).height(),
+        sO = 105, // shadowOffset (px); 50 => from -25 to +25
+        tO = 2,   // topOffset (px)  0 => vertical symmetry,
+        lO = 0   // leftOffset (px) 0 => horizontal symmetry
+    function moveshadow() {
+        var diff = $(window).scrollTop() - $(this).offset().top,
+            tOH = $(this)[0].offsetHeight,
+            should = (-diff < wH) && (diff < tOH),
+            factor = should ? -((diff / wH + 1) / (1 + tOH / wH) - .5) * sO + tO : 0;
+        if (should) {
+            $(this).css({
+                "box-shadow": lO +"px " + factor + "px 8px -2px rgba(0,0,0,.1), " + lO + "px " +
+                (factor + sO / 20) + "px 17px 4px rgba(0,0,0,.07), " + lO + "px " +
+                (factor - sO / 20) + "px 22px 8px rgba(0,0,0,.06), " + lO/2 + "px " +
+                factor / 20 + "px 21px 1px rgba(0,0,0,.12)"
+            });
+        }
+    };
 
-    /* Window resize */
 
+
+    /* Window Resize */
     var photoWidth = $('.photo').width();
     $('.photo').css('height', photoWidth );
-    $(window).resize(function() {
+
+    $(window).on('resize', function() {
+        wH = $(window).height();
         photoWidth = $('.photo').width();
         $('.photo').css('height', photoWidth );
+        $('.work-folder').each(function() {
+            $(this).next().animate({height: 0}, 300, "linear");
+        });
+    }).on('scroll resize', function() {
+        $('.photo-frame').each(moveshadow);
     });
 
-    /* Window scroll */
-    var halfHeight;
-    var eleHalfHeight;
-    var scrollTop;
-    var photosOffset;
-    var profOffset
-    var distPhotos;
-    var goldenRatio;
+    /* Work dropdowns */
 
-    $(window).scroll(function() {
-        halfHeight = $(window).height() / 2;
-        eleHalfHeight = $('.photo').height() / 2;
-        scrollTop = $(window).scrollTop();
-        photosOffset = $('.photos').offset().top - halfHeight + eleHalfHeight ;
-        distPhotos = (photosOffset - scrollTop);
 
-        if(distPhotos < photosOffset && distPhotos > -photosOffset) {
-            goldenRatio = distPhotos / 25;
-            $('.photo-frame').css('box-shadow', '0px ' + (goldenRatio + 6) + 'px 4px 2px #c9c9c9');
-        };
+
+    $('.work-folder').on('click', function() {
+
+        var workList = $(this).next();
+        if(workList.height() == 0) {
+            workList.animate({height: workList.get(0).scrollHeight}, 300, "linear");
+        } else {
+            workList.animate({height: 0}, 300, "linear");
+        }
 
     });
+
+
+
 });
