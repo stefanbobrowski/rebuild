@@ -5,6 +5,16 @@ $(document).ready(function(){
     var photoWidth = $('.photo').width();
     $('.photo').css('height', photoWidth );
 
+    /* Work dropdowns */
+    $('.work-folder').on('click', function() {
+        var workList = $(this).next();
+        if(workList.height() == 0) {
+            workList.animate({height: workList.get(0).scrollHeight}, 100);
+        } else {
+            workList.animate({height: 0}, 100);
+        }
+    });
+
     // Link page scrolls
     var $root = $('html, body');
     $('.work-link').click(function() { // Work
@@ -46,20 +56,14 @@ $(document).ready(function(){
         photoWidth = $('.photo').width();
         $('.photo').css('height', photoWidth);
         $('.work-folder').each(function() {
-            $(this).next().animate({height: 0}, 300, "linear");
+            if( $(this).next().height() > 0 ) {
+                $(this).next().animate({height: 0}, 100);
+            }
         });
     }).on('scroll resize', function() {
         $('.photo-frame').each(moveshadow);
     });
 
-    /* Work dropdowns */
-    $('.work-folder').on('click', function() {
-        var workList = $(this).next();
-        if(workList.height() == 0) {
-            workList.animate({height: workList.get(0).scrollHeight}, 300, "linear");
-        } else {
-            workList.animate({height: 0}, 300, "linear");
-        }
-    });
+
 
 });

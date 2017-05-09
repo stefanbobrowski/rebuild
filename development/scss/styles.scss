@@ -491,12 +491,33 @@ footer {
 
 @media screen and (max-width: 768px) {
 
+	body {
+		padding: 10px 10px 0 10px
+	}
+
+	main {
+		padding: 20px 10px;
+	}
+
+	.photos {
+		margin-bottom: 40px;
+	}
+
 	.photos .photo-frame {
 		border: 10px solid whitesmoke;
 	}
 
+	.bio {
+			margin: 0 auto 40px auto;
+
+			p {
+				font-size: 16px;
+			}
+	}
+
 	.professional {
 		flex-direction: column;
+		margin-bottom: 40px;
 	}
 
 	.professional > section {
@@ -529,6 +550,10 @@ footer {
 			max-width: 300px;
 			margin: 0 auto 10px auto;
 		}
+	}
+
+	.parallax .parallax-image {
+		background-attachment: scroll;
 	}
 }
 
