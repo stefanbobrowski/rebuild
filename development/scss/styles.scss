@@ -41,11 +41,8 @@ table {
 
 /* Variables */
 $color-1: #222; //dark
-$color-2: #e3e3e3;//light gray
-$color-3: #c9c9c9; // dark gray
-$color-4: #9ad3de; //light blue
-$color-5: #89bdd3; // dark blue
-
+$color-2: #c9c9c9; // dark gray
+$color-4: #89bdd3; //dark blue
 $font-1: 'Open Sans', sans-serif;
 
 /* General Styles */
@@ -55,6 +52,7 @@ body {
 	min-height: 100vh;
 	padding: 20px 20px 0 20px;
     font-family: $font-1;
+	color: $color-1;
 	background-color: #000;
 }
 
@@ -67,29 +65,17 @@ p {
     margin-bottom: 10px;
 }
 
-h1, h2, h3 {
-}
-
 a {
     text-decoration: none;
-    transition: color 0.5s ease;
+    transition: color 0.4s ease;
 	color: $color-1;
 	&:hover {
 		cursor: pointer;
-		color: $color-5 !important;
-	}
-
-	&:visited {
-		color: $color-1;
+		color: $color-4 !important;
 	}
 }
 
 /* Section Styles */
-
-body {
-
-}
-
 .wrapper {
 	width: 100%;
 	max-width: 1140px;
@@ -120,19 +106,21 @@ nav {
 
 	.hero-titles {
 		padding: 30px 0;
-		border-top: 3px solid $color-5;
-		border-bottom: 3px solid $color-5;
+		position: relative;
+		top: -20px;
+		border-top: 3px solid $color-4;
+		border-bottom: 3px solid $color-4;
 		font-weight: 300;
 		color: $color-1;
 
 		h2 {
 			font-family: $font-1;
 			margin-bottom: 20px;
-			font-size: 20px;
+			font-size: 24px;
 		}
 
 		h1 {
-			font-size: 30px;
+			font-size: 36px;
 			font-weight: 600;
 			text-transform: uppercase;
 			letter-spacing: 5px;
@@ -143,15 +131,15 @@ nav {
 		width: 50px;
 		margin: 0 auto;
 		position: absolute;
-		bottom: 20%;
-		bottom: calc(20% - 25px); left: 0; right: 0;
+		bottom: 15%;
+		bottom: calc(15% - 25px); left: 0; right: 0;
 		font-size: 50px;
 		transition: color 1.2s ease;
 		color: $color-1;
 
 		&:hover {
 			cursor: pointer;
-			color: $color-5;
+			color: $color-4;
 		}
 	}
 }
@@ -169,7 +157,7 @@ main {
 		background-color: #fff;
 		.section-title {
 			margin-bottom: 40px;
-			font-size: 28px;
+			font-size: 30px;
 			font-weight: 600;
 		}
 
@@ -178,11 +166,14 @@ main {
 			position: relative;
 			padding: 0 10px 10px;
 			margin-bottom: 20px;
-			font-size: 26px;
+			font-size: 28px;
 			font-weight: 600;
-			border-bottom: 2px solid $color-5;
+			border-bottom: 2px solid $color-4;
 		}
 	}
+}
+
+.about {
 }
 
 .photos {
@@ -193,7 +184,7 @@ main {
 	.photo-frame {
 		width: 31%;
 		border: 20px solid whitesmoke;
-		box-shadow: 0px 0px 4px 2px $color-3;
+		box-shadow: 0px 0px 4px 2px $color-2;
 		overflow: hidden;
 
 		&:first-of-type .photo {
@@ -214,7 +205,7 @@ main {
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
-			transition: all 0.5s ease;
+			transition: all 0.4s ease;
 			z-index: 1;
 			position: relative;
 
@@ -246,7 +237,7 @@ main {
 	& > section {
 		width: 31%;
 		padding: 20px;
-		border: 2px solid $color-5;
+		border: 2px solid $color-4;
 	}
 }
 
@@ -257,14 +248,9 @@ main {
 			margin: 10px 0 10px 0;
 			padding: 16px;
 			font-weight: 700;
-			color: $color-5;
-			background-color: $color-2;
-			transition: all 0.5s ease;
-
-			// &:nth-of-type(even) {
-			// 	color: $color-2;
-			// 	background-color: $color-5;
-			// }
+			color: #fff;
+			background-color: $color-4;
+			transition: all 0.4s ease;
 
 			&:hover {
 
@@ -278,7 +264,7 @@ main {
 		display: flex;
 
 		i {
-			transition: all 0.3s ease;
+			transition: all 0.4s ease;
 		}
 
 		h2 {
@@ -286,14 +272,13 @@ main {
 			font-size: 24px;
 			font-weight: 500;
 			text-align: left;
-			transition: all 0.3s ease;
+			transition: all 0.4s ease;
 		}
 
 		&:hover {
 			cursor: pointer;
-
 			i, h2 {
-				color: $color-5;
+				color: $color-4;
 			}
 		}
 	}
@@ -305,7 +290,7 @@ main {
 		position: relative;
 		text-align: left;
 		overflow: hidden;
-		transition: all 0.5s ease;
+		transition: all 0.4s ease;
 
 		&.expand {
 			height: auto;
@@ -319,7 +304,7 @@ main {
 			position: absolute;
 			left: 0px;
 			top: -4px;
-			background-color: $color-3;
+			background-color: $color-2;
 		}
 
 		li {
@@ -336,7 +321,7 @@ main {
 				top: 4px;
 				line-height: 20px;
 				font-weight: 400;
-				transition: all 0.5s ease;
+				transition: all 0.4s ease;
 
 				&:before {
 					content: '';
@@ -346,7 +331,7 @@ main {
 					position: absolute;
 					left: -32px;
 					top: 11px;
-					background-color: $color-3;
+					background-color: $color-2;
 				}
 			}
 		}
@@ -362,8 +347,8 @@ main {
 			height: 80px;
 			margin-bottom: 10px;
 			padding: 5px;
-			border: 1px solid $color-5;
-			transition: all 0.5s ease;
+			border: 1px solid $color-4;
+			transition: all 0.4s ease;
 			background-color: #fff;
 			background-repeat: no-repeat;
 			background-position: center;
@@ -413,9 +398,32 @@ main {
 				max-height: 400px;
 				margin-bottom: 10px;
 				padding: 15px;
-				border: 1px solid $color-5;
+				border: 1px solid $color-4;
+				font-family: $font-1;
 				font-size: 18px;
-				color: $color-5;
+				color: $color-4;
+				transition: all 0.4s linear;
+
+				&:hover {
+
+				}
+
+				&:focus {
+					color: #fff;
+					background-color: $color-4;
+					&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+					  color: #fff;
+					}
+					&::-moz-placeholder { /* Firefox 19+ */
+					  color: #fff;
+					}
+					&:-ms-input-placeholder { /* IE 10+ */
+					  color: #fff;
+					}
+					&:-moz-placeholder { /* Firefox 18- */
+					  color: #fff;
+					}
+				}
 
 				&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 				  color: $color-2;
@@ -436,16 +444,18 @@ main {
 				max-width: 320px;
 				margin: 0 auto;
 				padding: 15px;
-				font-size: 18px;
-				font-weight: 600;
-				color: $color-5;
-				border: 1px solid $color-5;
+				font-size: 20px;
+				font-weight: 500;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				color: $color-4;
+				border: 1px solid $color-4;
 				background-color: #fff;
-				transition: all 0.5s ease;
+				transition: all 0.4s ease;
 
 				&:hover {
 					cursor: pointer;
-					background-color: $color-5;
+					background-color: $color-4;
 					color: #fff;
 				}
 			}
@@ -468,7 +478,7 @@ footer {
 	height: 80px;
 	text-align: center;
 	font-size: 12px;
-	color: $color-5;
+	color: $color-4;
 	background-color: #000;
 
 	p {

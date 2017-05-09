@@ -1,30 +1,26 @@
 $(document).ready(function(){
     'use strict';
 
+    // Priority
+    var photoWidth = $('.photo').width();
+    $('.photo').css('height', photoWidth );
+
     // Link page scrolls
     var $root = $('html, body');
-    $('.hero-button').click(function() {
-        $root.animate({
-            scrollTop: $('main').offset().top
-        }, 1000);
+    $('.work-link').click(function() { // Work
+        $root.animate({scrollTop: $('.professional').offset().top - 20}, 500);
+        return false;
+    });
+    $('.contact-link').click(function() { // Contact
+        $root.animate({scrollTop: $('.contact').offset().top - 20}, 500);
+        return false;
+    });
+    $('.hero-button').click(function() { // Hero
+        $root.animate({scrollTop: $('main').offset().top}, 500);
         return false;
     });
 
-    $('.work-link').click(function() {
-        $root.animate({
-            scrollTop: $('.professional').offset().top - 20
-        }, 1300);
-        return false;
-    });
-
-    $('.contact-link').click(function() {
-        $root.animate({
-            scrollTop: $('.contact').offset().top - 20
-        }, 1500);
-        return false;
-    });
-
-    /* Window scroll */
+    /* Move Shadow Function */
     var wH = $(window).height(),
         sO = 105, // shadowOffset (px); 50 => from -25 to +25
         tO = 2,   // topOffset (px)  0 => vertical symmetry,
@@ -44,16 +40,11 @@ $(document).ready(function(){
         }
     };
 
-
-
-    /* Window Resize */
-    var photoWidth = $('.photo').width();
-    $('.photo').css('height', photoWidth );
-
+    // Window Resize
     $(window).on('resize', function() {
         wH = $(window).height();
         photoWidth = $('.photo').width();
-        $('.photo').css('height', photoWidth );
+        $('.photo').css('height', photoWidth);
         $('.work-folder').each(function() {
             $(this).next().animate({height: 0}, 300, "linear");
         });
@@ -62,20 +53,13 @@ $(document).ready(function(){
     });
 
     /* Work dropdowns */
-
-
-
     $('.work-folder').on('click', function() {
-
         var workList = $(this).next();
         if(workList.height() == 0) {
             workList.animate({height: workList.get(0).scrollHeight}, 300, "linear");
         } else {
             workList.animate({height: 0}, 300, "linear");
         }
-
     });
-
-
 
 });
