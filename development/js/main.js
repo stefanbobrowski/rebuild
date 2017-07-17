@@ -53,7 +53,7 @@ $(document).ready(function(){
     // Window Resize
     $(window).on('resize', function() {
         wH = $(window).height();
-        photoWidth = $('.photo').width();
+        photoWidth = $('.photo-frame:nth-of-type(2) .photo').width();
         $('.photo').css('height', photoWidth);
         $('.work-folder').each(function() {
             if( $(this).next().height() > 0 ) {
