@@ -2,8 +2,8 @@ $(document).ready(function(){
     'use strict';
 
     // Priority
-    var photoWidth = $('.photo').width();
-    $('.photo').css('height', photoWidth );
+    var photoWidth = $(".photo-frame:nth-of-type(2) .photo").width();
+    $('.photo').css('height', photoWidth);
 
     /* Work dropdowns */
     $('.work-folder').on('click', function() {

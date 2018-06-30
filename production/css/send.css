@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.send-page {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    color: #89bdd3;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
