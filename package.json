@@ -1,13 +1,13 @@
 {
     "name": "new-build",
-    "version": "2.0.0",
+    "version": "3.0.0",
     "description": "New build",
     "author": "Stefan Bobrowski",
     "license": "MIT",
     "main": "index.html",
     "scripts": {
         "autoprefixer": "postcss -u autoprefixer -r production/css/*.css",
-        "scss": "node-sass --output-style expanded --indent-width 4 -o production/css development/scss",
+        "scss": "node-sass --output-style expanded --omit-source-map-url --indent-width 4 -o production/css development/scss",
         "uglify": "uglifyjs development/js/*.js -m -o production/js/scripts.js",
         "serve": "browser-sync start --server --files \"production/css/*.css, production/js/*.js\"",
         "build:css": "npm run scss && npm run autoprefixer",
@@ -19,12 +19,12 @@
         "start": "npm run build:all && npm run watch:all"
     },
     "devDependencies": {
-        "node-sass": "^4.5.0",
-        "postcss-cli": "^3.0.0-beta",
-        "autoprefixer": "^6.7.6",
-        "browser-sync": "^2.18.8",
-        "npm-run-all": "^4.0.2",
-        "onchange": "^3.2.1",
-        "uglify-js": "^2.8.3"
+        "autoprefixer": "^6.7.7",
+        "browser-sync": "^2.24.5",
+        "node-sass": "^4.9.0",
+        "npm-run-all": "^4.1.3",
+        "onchange": "^3.3.0",
+        "postcss-cli": "^3.2.0",
+        "uglify-js": "^2.8.29"
     }
 }
