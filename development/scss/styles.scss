@@ -194,7 +194,7 @@ main {
 		}
 		.photo {
 			height: 100%;
-			background-color: #000;
+			background-color: whitesmoke;
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
@@ -244,10 +244,6 @@ main {
 			color: #fff;
 			background-color: $color-4;
 			transition: all 0.4s ease;
-
-			&:hover {
-
-			}
 		}
 	}
 }
@@ -402,10 +398,6 @@ main {
 				color: $color-4;
 				transition: all 0.4s linear;
 
-				&:hover {
-
-				}
-
 				&:focus {
 					color: #fff;
 					background-color: $color-4;
@@ -494,14 +486,13 @@ footer {
 		width: 80%;
 		max-width: 330px;
 
-		&:not(:nth-of-type(2)) {
+		&:not(:first-of-type) {
 			display: none;
 		}
 	}
 }
 
 @media screen and (max-width: 768px) {
-
 	body {
 		padding: 10px 10px 0 10px
 	}
@@ -519,11 +510,11 @@ footer {
 	}
 
 	.bio {
-			margin: 0 auto 40px auto;
+		margin: 0 auto 40px auto;
 
-			p {
-				font-size: 16px;
-			}
+		p {
+			font-size: 16px;
+		}
 	}
 
 	.professional {
@@ -544,15 +535,6 @@ footer {
 			li {
 				margin: 0 auto 10px auto;
 			}
-		}
-	}
-
-	.work {
-		h2 {
-		}
-		.work-folder {
-		}
-		ul {
 		}
 	}
 

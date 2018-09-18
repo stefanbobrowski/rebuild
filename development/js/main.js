@@ -35,7 +35,7 @@ $(document).ready(function(){
         sO = 105, // shadowOffset (px); 50 => from -25 to +25
         tO = 2,   // topOffset (px)  0 => vertical symmetry,
         lO = 0   // leftOffset (px) 0 => horizontal symmetry
-    function moveshadow() {
+    function moveShadow() {
         var diff = $(window).scrollTop() - $(this).offset().top,
             tOH = $(this)[0].offsetHeight,
             should = (-diff < wH) && (diff < tOH),
@@ -53,7 +53,7 @@ $(document).ready(function(){
     // Window Resize
     $(window).on('resize', function() {
         wH = $(window).height();
-        photoWidth = $('.photo-frame:nth-of-type(2) .photo').width();
+        photoWidth = $('.photo-frame .photo').width();
         $('.photo').css('height', photoWidth);
         $('.work-folder').each(function() {
             if( $(this).next().height() > 0 ) {
@@ -61,9 +61,9 @@ $(document).ready(function(){
             }
         });
     }).on('scroll resize', function() {
-        $('.photo-frame').each(moveshadow);
+        $('.photo-frame').each(moveShadow);
     });
 
-
-
 });
+
+
