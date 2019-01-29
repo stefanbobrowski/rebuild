@@ -251,7 +251,27 @@ main {
 .work {
 
 	.resume {
+		display: flex;
 		margin-bottom: 20px;
+
+		i {
+			transition: all 0.4s ease;
+		}
+
+		h2 {
+			margin-left: 4px;
+			font-size: 24px;
+			font-weight: 500;
+			text-align: left;
+			transition: all 0.4s ease;
+		}
+
+		&:hover {
+			cursor: pointer;
+			i, h2 {
+				color: $color-4;
+			}
+		}		
 	}
 
 	.work-folder {
