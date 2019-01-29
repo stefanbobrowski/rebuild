@@ -55,11 +55,6 @@ $(document).ready(function(){
         wH = $(window).height();
         photoWidth = $('.photo-frame .photo').width();
         $('.photo').css('height', photoWidth);
-        $('.work-folder').each(function() {
-            if( $(this).next().height() > 0 ) {
-                $(this).next().animate({height: 0}, 100);
-            }
-        });
     }).on('scroll resize', function() {
         $('.photo-frame').each(moveShadow);
     });
